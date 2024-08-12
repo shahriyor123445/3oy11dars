@@ -25,13 +25,16 @@ const ProductsCarousel = () => {
   }
 
   return (
-    <div className="w-[500px] flex gap-10">
+    <div className="w-full">
       {products.length > 0 ? (
-        <Carousel leftControl={null} rightControl="">
+        <Carousel>
           {groupedProducts.map((group, index) => (
-            <div key={index} className="flex justify-center gap-4 w-[500px]">
-              {group.map((product, index2) => (
-                <div key={index2} className="w-1/4">
+            <div key={index} className="flex gap-4">
+              {group.map((product) => (
+                <div
+                  key={product.id}
+                  className="max-w-xs rounded overflow-hidden shadow-lg p-4 mt-16"
+                >
                   <img
                     className="w-full h-40 object-cover"
                     src={product.image}
